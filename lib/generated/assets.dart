@@ -7,8 +7,16 @@ class Assets {
   static const String iconsIcRadio = 'assets/icons/ic_radio.svg';
   static const String iconsIcSebha = 'assets/icons/ic_sebha.svg';
   static const String iconsIcTime = 'assets/icons/ic_time.svg';
+  static const String iconsIconSearch = 'assets/icons/icon_search.svg';
+  static const String iconsSuraNumber = 'assets/icons/sura_number.svg';
   static const String imagesAndroid12splash =
       'assets/images/android12splash.png';
-  static const String imagesBackground = 'assets/images/Background.png';
   static const String imagesBranding = 'assets/images/branding.png';
+  static const String imagesHadithBg = 'assets/images/hadithBg.png';
+  static const String imagesImgMostRecent = 'assets/images/img_most_recent.png';
+  static const String imagesLogo = 'assets/images/logo.png';
+  static const String imagesQuranBg = 'assets/images/quranBg.png';
+  static const String imagesRadioBg = 'assets/images/radioBg.png';
+  static const String imagesSebhaBg = 'assets/images/sebhaBg.png';
+  static const String imagesTimeBg = 'assets/images/timeBg.png';
 }

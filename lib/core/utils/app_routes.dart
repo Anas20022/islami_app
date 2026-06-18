@@ -10,4 +10,6 @@ class AppRoutes {
   static const String radioScreen = "/radioScreen";
 
   static const String timeScreen = "/timeScreen";
+
+  static const String suraDetailsScreen = "/suraDetailsScreen";
 }
