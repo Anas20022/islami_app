@@ -4,7 +4,7 @@ import 'package:islami_app/core/utils/app_assets.dart';
 import 'package:islami_app/core/utils/app_colors.dart';
 import 'package:islami_app/features/screen/tabs/TimeScreen.dart';
 import 'package:islami_app/features/screen/tabs/hadeth_screen.dart';
-import 'package:islami_app/features/screen/tabs/quran_screen.dart';
+import 'package:islami_app/features/screen/tabs/quran/quran_screen.dart';
 import 'package:islami_app/features/screen/tabs/radio_screen.dart';
 import 'package:islami_app/features/screen/tabs/sebha_screen.dart';
 
@@ -36,6 +36,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+
     return Stack(
       children: [
         Image.asset(
@@ -44,55 +47,59 @@ class _HomeScreenState extends State<HomeScreen> {
           height: double.infinity,
           fit: BoxFit.cover,
         ),
-        Scaffold(
-          body: Column(
-            children: [
-              Image.asset(AppAssets.logo, width: double.infinity),
-              Expanded(child: navBarTabs[selectedIndex]),
-            ],
-          ),
-          // todo: the the other solution use the (Theme Widget) on the BottomNavigationBar add have extra extinction
-          bottomNavigationBar: Theme(
-            data: Theme.of(
-              context,
-            ).copyWith(canvasColor: AppColors.primaryColor),
-            child: BottomNavigationBar(
-              //todo: use the if the items > 3  , we use two solution to appear the color backgroundColor ## this 1 of them
-              // type: BottomNavigationBarType.fixed,
-              // backgroundColor: AppColors.primaryColor,
-              currentIndex: selectedIndex,
-              onTap: (index) {
-                selectedIndex = index;
-                setState(() {});
-              },
-              // iconSize: 26,
-              items: [
-                bottomNavigationBarItem(
-                  index: 0,
-                  icon: AppAssets.quranIcon,
-                  label: "Quran",
-                ),
-                bottomNavigationBarItem(
-                  index: 1,
-                  icon: AppAssets.hadithIcon,
-                  label: "Hadith",
-                ),
-                bottomNavigationBarItem(
-                  index: 2,
-                  icon: AppAssets.sebhaIcon,
-                  label: "Sebha",
-                ),
-                bottomNavigationBarItem(
-                  index: 3,
-                  icon: AppAssets.radioIcon,
-                  label: "Radio",
-                ),
-                bottomNavigationBarItem(
-                  index: 4,
-                  icon: AppAssets.timeIcon,
-                  label: "Time",
-                ),
+        SafeArea(
+          child: Scaffold(
+            backgroundColor: AppColors.transparentColor,
+            body: Column(
+              spacing: height * 0.02,
+              children: [
+                Image.asset(AppAssets.logo, width: double.infinity),
+                Expanded(child: navBarTabs[selectedIndex]),
               ],
+            ),
+            // todo: the the other solution use the (Theme Widget) on the BottomNavigationBar add have extra extinction
+            bottomNavigationBar: Theme(
+              data: Theme.of(
+                context,
+              ).copyWith(canvasColor: AppColors.primaryColor),
+              child: BottomNavigationBar(
+                //todo: use the if the items > 3  , we use two solution to appear the color backgroundColor ## this 1 of them
+                // type: BottomNavigationBarType.fixed,
+                // backgroundColor: AppColors.primaryColor,
+                currentIndex: selectedIndex,
+                onTap: (index) {
+                  selectedIndex = index;
+                  setState(() {});
+                },
+                // iconSize: 26,
+                items: [
+                  bottomNavigationBarItem(
+                    index: 0,
+                    icon: AppAssets.quranIcon,
+                    label: "Quran",
+                  ),
+                  bottomNavigationBarItem(
+                    index: 1,
+                    icon: AppAssets.hadithIcon,
+                    label: "Hadith",
+                  ),
+                  bottomNavigationBarItem(
+                    index: 2,
+                    icon: AppAssets.sebhaIcon,
+                    label: "Sebha",
+                  ),
+                  bottomNavigationBarItem(
+                    index: 3,
+                    icon: AppAssets.radioIcon,
+                    label: "Radio",
+                  ),
+                  bottomNavigationBarItem(
+                    index: 4,
+                    icon: AppAssets.timeIcon,
+                    label: "Time",
+                  ),
+                ],
+              ),
             ),
           ),
         ),

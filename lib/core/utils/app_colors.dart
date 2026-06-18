@@ -10,4 +10,6 @@ class AppColors {
   static const Color shadow01 = Color(0x99202020);
 
   static const Color whiteColor = Color(0xffffffff);
+
+  static const Color selectionColor = Color(0x71ffffff);
 }
